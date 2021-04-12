@@ -1,0 +1,60 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	targetNamespace="http://www.pnc.com/book/store/app">
+	<xs:element name="Book">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ID" type="xs:string" />
+				<xs:element name="Title" type="xs:string" />
+				<xs:element name="Author" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Books">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0"
+					ref="tns:Book" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetBookRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ID" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetBookResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="1" minOccurs="0" ref="tns:Book" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddBookRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="1" minOccurs="1" ref="tns:Book" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddBookResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="1" minOccurs="0" ref="tns:Book" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetAllBooksRequest">
+		<xs:complexType />
+	</xs:element>
+	<xs:element name="GetAllBooksResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0"
+					ref="tns:Book" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

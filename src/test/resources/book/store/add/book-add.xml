@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:app="http://www.pnc.com/book/store/app">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <app:AddBookRequest>
+         <app:Book>
+            <!--Optional:-->
+            <app:ID>1</app:ID>
+            <app:Title>title</app:Title>
+            <app:Author>goole</app:Author>
+         </app:Book>
+      </app:AddBookRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
